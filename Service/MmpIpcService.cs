@@ -75,8 +75,7 @@ namespace BassPlayerSharp.Service
 
         private void CheckSingleInstance()
         {
-            bool mutexCreated;
-            _mutex = new Mutex(true, MutexName, out mutexCreated);
+            _mutex = new Mutex(true, MutexName, out bool mutexCreated);
             if (!mutexCreated)
             {
                 Stop();
